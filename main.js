@@ -195,7 +195,7 @@ class Playlist {
         this.videos = [];
     }
     getVideos(){
-        return this.videos;s
+        return this.videos;
     }
     addVideo(title,duration) {
         this.videos.push({title,duration});
@@ -208,7 +208,7 @@ class Playlist {
       return total;
     }
     averageDuration () {
-const average= totalDuration()/this.videos.length
+const average= this.totalDuration()/this.videos.length
 return average
     }
 }
