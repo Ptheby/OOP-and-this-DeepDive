@@ -190,36 +190,56 @@
 // //Challenges: Embracing OOP Techniques:
 // Develop a class named "Playlist" that:
 
-class Playlist {
-    constructor() {
-        this.videos = [];
-    }
-    getVideos(){
-        return this.videos;
-    }
-    addVideo(title,duration) {
-        this.videos.push({title,duration});
-    }
-    totalDuration() {
-        let total= 0;
-        for(i=0; i < this.videos.length;i++) {
-        total = total+ this.videos[i].duration
-        }
-      return total;
-    }
-    averageDuration () {
-const average= this.totalDuration()/this.videos.length
-return average
-    }
-}
-const playlist= new Playlist();
-playlist.addVideo("Dark Knight", 152);
-playlist.addVideo("Burning", 148);
-playlist.addVideo("Unbreakable", 107);
+// class Playlist {
+//     constructor() {
+//         this.videos = [];
+//     }
+//     getVideos(){
+//         return this.videos;
+//     }
+//     addVideo(title,duration) {
+//         this.videos.push({title,duration});
+//     }
+//     totalDuration() {
+//         let total= 0;
+//         for(i=0; i < this.videos.length;i++) {
+//         total = total+ this.videos[i].duration
+//         }
+//       return total;
+//     }
+//     averageDuration () {
+// const average= this.totalDuration()/this.videos.length
+// return average
+//     }
+// }
+// const playlist= new Playlist();
+// playlist.addVideo("Dark Knight", 152);
+// playlist.addVideo("Burning", 148);
+// playlist.addVideo("Unbreakable", 107);
 
-const totalDuration = playlist.totalDuration(); 
+// const totalDuration = playlist.totalDuration(); 
 
-console.log(playlist);
+// console.log(playlist);
 
 //this is partially working but saying "i" is not defined. got help. not working.
 
+
+
+// ///Construct a function named contextDemonstrator that:
+// Receives a method and a context.
+// Demonstrates how to bind different contexts using the "this" keyword.
+// Utilizes both .bind() and arrow functions to illustrate context binding.
+// Commit: "Demonstrated context binding in various scenarios"
+
+let blog = {
+    name: 'Tapas',
+    address: 'freecodecamp',
+    message: function() {
+        console.log(`${this.name} blogs on ${this.address}`);
+    }
+};
+
+blog.message();
+
+
+//I don't understand this topic and it's not discussed in either video- and briefly mentioned at the end of the class article. Spent an hour googling and reading but it's no clearer. 
