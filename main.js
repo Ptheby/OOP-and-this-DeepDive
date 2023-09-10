@@ -165,23 +165,61 @@
 // Understanding 'this' in Context:
 // 2. Dive into the lesson on "Understanding 'this' in JavaScript".
 
-// Craft a simple code snippet that illustrates different behaviors of the "this" keyword based on context.
+// // Craft a simple code snippet that illustrates different behaviors of the "this" keyword based on context.
 
 
-const dog = {
-    breed: "Boxer",
-    size: "large",
-    toys: ["ball", "bone", "stuffed animal"],
-    listToys : function() {
-        this.toys.forEach(function(toy) {     //not sure this is working as intended? 
-            console.log(toy)
-        });
-        this.color = "Brown";  //i use this to add a property of color with a brown value to dog. 
-    }
-}
-console.log(dog.listToys());  //this works here because i can call on dog. "this" would not because it is global at this point and not defined with these properties
-console.log(dog);      //Breed: 'Boxer', size: 'large', toys: Array(3), color: 'Brown', listToys: ƒ}
+// const dog = {
+//     breed: "Boxer",
+//     size: "large",
+//     toys: ["ball", "bone", "stuffed animal"],
+//     listToys : function() {
+//         this.toys.forEach(function(toy) {     //not sure this is working as intended? 
+//             console.log(toy)
+//         });
+//         this.color = "Brown";  //i use this to add a property of color with a brown value to dog. 
+//     }
+// }
+// console.log(dog.listToys());  //this works here because i can call on dog. "this" would not because it is global at this point and not defined with these properties
+// console.log(dog);      //Breed: 'Boxer', size: 'large', toys: Array(3), color: 'Brown', listToys: ƒ}
 
 // Discuss how "this" behaves in arrow functions versus traditional functions.
 // My Answer: Arrow functions do not have a "this" scope. They look to the closest, and i assume, above regular function for an object to 
 //assign this to. If none, then it adopts the global object/Window, as "this"  UNLIKE traditonal functions, it uses the object that function is within. 
+
+
+// //Challenges: Embracing OOP Techniques:
+// Develop a class named "Playlist" that:
+
+class Playlist {
+    constructor() {
+        this.videos = [];
+    }
+    getVideos(){
+        return this.videos;s
+    }
+    addVideo(title,duration) {
+        this.videos.push({title,duration});
+    }
+    totalDuration() {
+        let total= 0;
+        for(i=0; i < this.videos.length;i++) {
+        total = total+ this.videos[i].duration
+        }
+      return total;
+    }
+    averageDuration () {
+const average= totalDuration()/this.videos.length
+return average
+    }
+}
+const playlist= new Playlist();
+playlist.addVideo("Dark Knight", 152);
+playlist.addVideo("Burning", 148);
+playlist.addVideo("Unbreakable", 107);
+
+const totalDuration = playlist.totalDuration(); 
+
+console.log(playlist);
+
+//this is partially working but saying "i" is not defined. got help. not working.
+
