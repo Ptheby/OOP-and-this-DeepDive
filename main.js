@@ -231,15 +231,17 @@
 // Utilizes both .bind() and arrow functions to illustrate context binding.
 // Commit: "Demonstrated context binding in various scenarios"
 
-let blog = {
-    name: 'Tapas',
-    address: 'freecodecamp',
-    message: function() {
-        console.log(`${this.name} blogs on ${this.address}`);
-    }
-};
+//random example i found
+// let blog = {
+//     name: 'Tapas',
+//     address: 'freecodecamp',
+//     message: function() {
+//         console.log(`${this.name} blogs on ${this.address}`);
+//     }
+// };
 
-blog.message();
+// blog.message();
+//Here this is bound to the blog object. We know this because we invoke the method message() on the blog object. So this.name is going to log Tapas and this.address is going to log  freeCodeCamp in the console.
 
 
 //I don't understand this topic and it's not discussed in either video- and briefly mentioned at the end of the class article. Spent an hour googling and reading but it's no clearer. 
